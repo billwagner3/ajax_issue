@@ -1,0 +1,29 @@
+<?php
+
+use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
+
+class UsersTableSeeder extends Seeder
+{
+	/**
+	 * Run the database seeds.
+	 *
+	 * @return void
+	 */
+	public function run()
+	{
+		DB::table('users')->insert([
+
+			[
+				'name' => 'Bill Smith',
+				'email' => 'bill_smith@gmail.com',
+				'password' => bcrypt('secret'),
+			],
+			[
+				'name' => 'Wendy Smith',
+				'address' => 'wendy_smith@gmail.com',
+				'password' => bcrypt('secret'),
+			],
+		]);
+	}
+}
